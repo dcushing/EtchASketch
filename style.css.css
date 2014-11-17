@@ -1,0 +1,22 @@
+.row {
+	color:#ffffff;
+	clear:both;
+	overflow:auto;
+}
+.container {
+	border: solid 1px black;
+	color: # 9090ff;
+	overflow:auto;
+}
+
+.cell {
+height: 3px;
+width: 3px;
+float:left;
+}
+.hover{
+background-color: #000000;
+}
+body {
+background-color: #efef90;
+}
