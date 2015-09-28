@@ -1,7 +1,7 @@
 //test to make sure js loaded
 console.log("yes this loaded correctly");
 $(document).ready(function() {
-    var container = document.getElementById('container');
+    var container = document.getElementById('sketch-container');
     function createGrid(rows, cells, cellSize) { //creates the etch-a-sketch grid
         var row = $('<div class="row"></div>');
         var x = 0;
@@ -11,8 +11,7 @@ $(document).ready(function() {
         };
         var y = 0;
         while (y < rows) {
-            //$(clonedRow).removeAttr('id').clone().appendTo('.container');
-            $(row).clone().appendTo('.container');
+            $(row).clone().appendTo('#sketch-container');
             y++
         }
         makeArt();
@@ -34,12 +33,12 @@ $(document).ready(function() {
     $("button#shake").click(function() { //click the button to reset & prompt user for size to create new board
         $('.cell').removeClass("hover");
         deleteGrid();
-        var sizeString = prompt("What size board do you want? (Single number 1-350)");
+        var sizeString = prompt("What size board do you want? (Single number 1-300)");
         size = parseInt(sizeString);
         if (size > 350 || isNaN(size)) {
-            prompt("That's not a valid size. Please enter a valid size (single number 1-350).")
+            prompt("That's not a valid size. Please enter a valid size (single number 1-300).")
         }
-        cellSize = Math.floor(960/size);
+        cellSize = Math.floor(900/size);
         createGrid(size,size,cellSize)
     });
     
@@ -61,9 +60,3 @@ $(document).ready(function() {
         colorHover();
     });
 });
-
-
-
-
-
-350
